@@ -1,0 +1,18 @@
+dev:
+preparativo:
+    - pnpm install
+    - papm prisma generate
+
+execucao:
+    - pnpm dev
+    - pnpm db:studio
+
+prod:
+    preparativo:
+    - pnpm install
+    - pnpm build
+    - pnpm prune --prod
+    - papm prisma generate
+
+execucao:
+    - pnpm start
