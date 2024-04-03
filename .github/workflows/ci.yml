@@ -33,3 +33,5 @@ jobs:
       - name: Push image
         run: |
           docker push humberto08/nlw-unite-nodejs:${{ steps.generate_sha.outputs.sha }}
+          docker tag humberto08/nlw-unite-nodejs:${{ steps.generate_sha.outputs.sha }} humberto08/nlw-unite-nodejs:latest
+          docker push humberto08/nlw-unite-nodejs:latest
